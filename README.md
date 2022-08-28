@@ -22,7 +22,7 @@ Start by cloning this repository somewhere on your machine.
 $ git clone https://github.com/haggen/traefik.git
 ```
 
-Now we'll need a hostname to work with. Containers are going to be routed to sub-domains of the chosen hostname. This hostname must loopback, e.g. like `localhost`, but it should also be publicly available, otherwise APIs, such as Google's or Twitter's, won't be able to talk back to your application.
+Now we'll need a hostname to work with. This hostname must loopback, e.g. like `localhost`. Containers are going to be routed to sub-domains of the chosen hostname. It also must use a valid TLD, otherwise APIs, like Google's, won't accept it.
 
 I've set my own — `*.local.crz.li` — and I encourage you to do the same, but there are other options:
 
