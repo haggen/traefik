@@ -1,0 +1,30 @@
+global:
+  sendAnonymousUsage: false
+
+log:
+  level: DEBUG
+
+api:
+  insecure: true
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+
+entryPoints:
+  http:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: https
+          scheme: https
+  https:
+    address: ":443"
+#
+# Provide your own certificate.
+# tls:
+#   certificates:
+#     - certFile: "/etc/certs/cert.pem"
+#       keyFile: "/etc/certs/key.pem"
