@@ -59,7 +59,7 @@ But you can also do it with OpenSSL.
 
 ```sh
 $ cd traefik
-$ openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout certs/key.pem -out certs/cert.pem -days 365 -subj '/CN=*.local.crz.li'
+$ openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout certs/key.pem -out certs/cert.pem -days 365 -addext "subjectAltName = DNS:*.local.crz.li"
 ```
 
 (Work in progress…)
