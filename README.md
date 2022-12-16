@@ -47,13 +47,13 @@ $ docker compose up -d
 
 Finally, in the `compose.yml` — or `docker-compose.yml` — file of your application you need to connect it to the new network and add the required labels.
 
-See [example.yml](./example.yml) for reference.
+See [example/compose.yml](./example/compose.yml) for reference.
 
 ## Provide your own certificates
 
 Traefik has a default certificate but you can provide your own, if you want.
 
-If dont want to bother, 📝 [mkcert](https://github.com/FiloSottile/mkcert) is a nice little tool that generates self-signed certificates with good defaults and automatically configure a CA on your system.
+If you don't want to bother, 📝 [mkcert](https://github.com/FiloSottile/mkcert) is a nice little tool that generates self-signed certificates with good defaults and automatically configure a CA on your system.
 
 But you can also do it with OpenSSL.
 
@@ -62,7 +62,7 @@ $ cd traefik
 $ openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout certs/key.pem -out certs/cert.pem -days 365 -addext "subjectAltName = DNS:*.local.crz.li"
 ```
 
-(Work in progress…)
+Just remember to change the hostname to the one you chose earlier.
 
 ### Add certificate to your browser
 
@@ -70,7 +70,7 @@ If you didn't use mkcert or you're working in a foreign system, like WSL, your b
 
 You can sort this out by adding your custom certificate to your browser trusted list. This comes with its own set of risks, so beware.
 
-(Work in progress…)
+(🚧 Work in progress…)
 
 ## License
 
