@@ -1,0 +1,16 @@
+services:
+  traefik:
+    image: traefik:3.0
+    restart: always
+    networks:
+      - traefik
+    ports:
+      - 443:443
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./config:/etc/traefik:ro
+
+networks:
+  traefik:
+    external: true

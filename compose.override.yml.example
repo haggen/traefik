@@ -1,0 +1,10 @@
+services:
+  traefik:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.local.crz.li`)"
+      - "traefik.http.routers.traefik.tls=true"
+      - "traefik.http.routers.traefik.service=api@internal"
+      - "traefik.http.routers.api.middlewares=traefik-auth"
+      # Use `htpasswd -nBC 10 username` from `apache2-tools` to generate the credentials.
+      - "traefik.http.middlewares.traefik-auth.basicauth.users=username:password"

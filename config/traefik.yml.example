@@ -1,0 +1,45 @@
+global:
+  sendAnonymousUsage: false
+
+log:
+  level: INFO
+
+api:
+  insecure: false
+
+providers:
+  docker:
+    exposedByDefault: false
+    network: traefik
+  file:
+    directory: /etc/traefik
+
+entryPoints:
+  http:
+    address: ":80"
+    # Enable auto redirection from http to https.
+    # http:
+    #   redirections:
+    #     entryPoint:
+    #       to: https
+    #       scheme: https
+  https:
+    address: ":443"
+    http:
+      tls:
+        certResolver: default
+
+certificatesResolvers:
+  default:
+    acme:
+      # Your Let's Ecrypt email.
+      email: me@example.com
+      storage: /etc/acme.json
+      httpChallenge:
+        entryPoint: http
+#
+# Provide your own certificate.
+# tls:
+#   certificates:
+#     - certFile: "/etc/traefik/certs/cert.pem"
+#       keyFile: "/etc/traefik/certs/key.pem"

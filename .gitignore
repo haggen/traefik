@@ -1,1 +1,1 @@
-/certs/*.pem
+/config/**/*.yml
