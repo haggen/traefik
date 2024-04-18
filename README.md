@@ -80,14 +80,13 @@ If you don't want to bother, 📝 [mkcert](https://github.com/FiloSottile/mkcert
 > [!Tip]
 > A CA is important so your browser trusts the certificate. See [Trusting your own certificate](#trusting-your-own-certificate) for more information.
 
-But you can also do it with OpenSSL.
+But you can also do it with OpenSSL, for example:
 
 ```sh
-cd traefik
-openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout certs/key.pem -out certs/cert.pem -days 365 -addext "subjectAltName = DNS:*.local.crz.li"
+openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout config/certs/key.pem -out config/certs/cert.pem -days 365 -addext "subjectAltName = DNS:*.local.crz.li"
 ```
 
-Just remember to change the hostname to the one you chose earlier.
+Just remember to change the hostname to the one you chose.
 
 ### Trusting your own certificate
 
