@@ -9,7 +9,7 @@ services:
       - 80:80
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./config:/etc/traefik:ro
+      - ./config:/etc/traefik
 
 networks:
   traefik:

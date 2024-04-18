@@ -34,7 +34,7 @@ certificatesResolvers:
     acme:
       # Your Let's Ecrypt email.
       email: me@example.com
-      storage: /etc/acme.json
+      storage: /etc/traefik/acme.json
       httpChallenge:
         entryPoint: http
 #

@@ -1,5 +1,8 @@
 # Ignore local config.
-/config/**/*.yml
+config/**/*.yml
 
-# Ignore local override file.
+# Ignore ACME data.
+acme.json
+
+# Ignore override file.
 compose.override.yml
