@@ -1,1 +1,5 @@
+# Ignore local config.
 /config/**/*.yml
+
+# Ignore local override file.
+compose.override.yml
