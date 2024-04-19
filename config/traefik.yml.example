@@ -25,6 +25,8 @@ entryPoints:
   https:
     address: ":443"
     http:
+      # Watch out!
+      # The following default TLS configuration is ignored if there's any TLS options set on the router.
       tls:
         certResolver: default
 
