@@ -4,8 +4,7 @@ global:
 log:
   level: INFO
 
-api:
-  insecure: false
+api: true
 
 providers:
   docker:
@@ -18,11 +17,11 @@ entryPoints:
   http:
     address: ":80"
     # Enable auto redirection from http to https.
-    # http:
-    #   redirections:
-    #     entryPoint:
-    #       to: https
-    #       scheme: https
+    http:
+      redirections:
+        entryPoint:
+          to: https
+          scheme: https
   https:
     address: ":443"
     http:
@@ -35,8 +34,7 @@ certificatesResolvers:
       # Your Let's Ecrypt email.
       email: me@example.com
       storage: /etc/traefik/acme.json
-      httpChallenge:
-        entryPoint: http
+      tlsChallenge: true
 #
 # Provide your own certificate.
 # tls:
